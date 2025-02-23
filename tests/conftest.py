@@ -1,15 +1,16 @@
 import pytest
 from selene import browser
-from selenium import webdriver
+
+import project
 
 
-@pytest.fixture(scope="session", autouse=True)
+@pytest.fixture(scope="function", autouse=True)
 def browser_set():
-    driver_options = webdriver.ChromeOptions()
-    driver_options.page_load_strategy = "eager"
-    browser.config.driver_options = driver_options
-    browser.config.base_url= "https://www.lamoda.ru"
-    browser.driver.set_window_size(1920, 1080)
+    browser.config.driver_name = project.config.driver_name
+    browser.config.hold_driver_at_exit = project.config.hold_driver_at_exit
+    browser.config.base_url= project.config.base_url
+    browser.config.window_width = project.config.window_width
+    browser.config.window_height = project.config.window_height
 
     yield
     browser.quit()
