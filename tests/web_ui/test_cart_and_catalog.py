@@ -42,5 +42,6 @@ def test_delete_item_from_cart():
     cart.open_cart()
     cart.check_presence_in_cart(cpu)
     cart.delete_item_from_cart()
+    cart.check_empty_cart()
 
 

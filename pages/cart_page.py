@@ -27,5 +27,7 @@ class Cart:
     def delete_item_from_cart(self):
         with allure.step("Удаление предмета из корзины"):
             browser.element("[class='Icons_delete__VMin6 BasketItem_delete___LqNs']").click()
+
+    def check_empty_cart(self):
         with allure.step("Проверка того, что корзина пустая"):
             browser.element("[class='regard-container']").should(have.text("В корзине пока ничего нет"))

@@ -1,7 +1,7 @@
 import os
 from dotenv import load_dotenv
 import allure
-from pages.login import Login
+from pages.login_actions import Login
 from resources.common_actions import Common
 
 load_dotenv()

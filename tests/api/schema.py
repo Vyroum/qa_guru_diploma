@@ -1,4 +1,4 @@
-login = {
+login_schema = {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "properties": {
@@ -381,5 +381,222 @@ login = {
     "wishlists_goods",
     "business",
     "basket"
+  ]
+}
+
+add_to_cart = {
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "client_id": {
+      "type": "null"
+    },
+    "active": {
+      "type": "integer"
+    },
+    "id": {
+      "type": "string"
+    },
+    "goods": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "basket_id": {
+              "type": "integer"
+            },
+            "good_id": {
+              "type": "integer"
+            },
+            "good_count": {
+              "type": "integer"
+            },
+            "brief": {
+              "type": "string"
+            },
+            "photos": {
+              "type": "object",
+              "properties": {
+                "urls": {
+                  "type": "array",
+                  "items": [
+                    {
+                      "type": "string"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "urls"
+              ]
+            },
+            "price": {
+              "type": "integer"
+            },
+            "title": {
+              "type": "string"
+            },
+            "full_title": {
+              "type": "string"
+            },
+            "show_flag": {
+              "type": "integer"
+            },
+            "badges": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "text": {
+                      "type": "string"
+                    },
+                    "order": {
+                      "type": "integer"
+                    },
+                    "background_color": {
+                      "type": "string"
+                    },
+                    "text_color": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "text",
+                    "order",
+                    "background_color",
+                    "text_color",
+                    "title",
+                    "type"
+                  ]
+                }
+              ]
+            },
+            "admin_link": {
+              "type": "string"
+            },
+            "price_old": {
+              "type": "null"
+            },
+            "markdown": {
+              "type": "boolean"
+            },
+            "seo_url": {
+              "type": "string"
+            },
+            "vendor": {
+              "type": "string"
+            },
+            "category_array": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "seo_url": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "title",
+                    "seo_url"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "seo_url": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "title",
+                    "seo_url"
+                  ]
+                }
+              ]
+            },
+            "external_marketplace": {
+              "type": "boolean"
+            },
+            "similar": {
+              "type": "null"
+            },
+            "disable_delivery": {
+              "type": "boolean"
+            },
+            "bonus": {
+              "type": "null"
+            }
+          },
+          "required": [
+            "id",
+            "basket_id",
+            "good_id",
+            "good_count",
+            "brief",
+            "photos",
+            "price",
+            "title",
+            "full_title",
+            "show_flag",
+            "badges",
+            "admin_link",
+            "price_old",
+            "markdown",
+            "seo_url",
+            "vendor",
+            "category_array",
+            "external_marketplace",
+            "similar",
+            "disable_delivery",
+            "bonus"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "client_id",
+    "active",
+    "id",
+    "goods"
+  ]
+}
+
+cart_clear = {
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "message": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "message"
   ]
 }
