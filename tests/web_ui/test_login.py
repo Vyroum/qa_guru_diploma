@@ -1,7 +1,7 @@
 import os
 from dotenv import load_dotenv
 import allure
-from pages.login_actions import Login
+from pages.web_ui.login import Login
 from resources.common_actions import Common
 
 load_dotenv()
@@ -11,6 +11,7 @@ user_password = os.getenv("PASSWORD")
 login = Login()
 common = Common()
 
+
 @allure.title("Проверка неуспешной авторизации")
 @allure.tag("login")
 def test_failed_authorization():
@@ -19,6 +20,7 @@ def test_failed_authorization():
     login.input_invalid_login_credentials()
     login.press_login_button()
     login.check_unsuccessfull_authorization()
+
 
 @allure.title("Проверка успешной авторизации")
 @allure.tag("login")
@@ -43,5 +45,3 @@ def test_successfull_logout():
     login.open_login_form_or_user_page()
     login.press_logout_button()
     login.check_successful_logout()
-
-
