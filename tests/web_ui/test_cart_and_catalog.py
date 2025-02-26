@@ -2,9 +2,9 @@ import time
 
 import allure
 
-from pages.catalog_page import Catalog
+from pages.web_ui.catalog_page import Catalog
 from resources.common_actions import Common
-from pages.cart_page import Cart
+from pages.web_ui.cart_page import Cart
 from resources.cpu import cpu
 
 common = Common()

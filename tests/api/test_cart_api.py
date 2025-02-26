@@ -3,7 +3,7 @@ from selene import browser, have, be
 import allure
 from jsonschema import validate
 
-from pages.cart_page import Cart
+from pages.web_ui.cart_page import Cart
 from tests.api.schema import add_to_cart, cart_clear
 from resources.cpu import cpu
 from allure_commons.types import AttachmentType
