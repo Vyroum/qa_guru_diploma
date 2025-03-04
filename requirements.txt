@@ -6,3 +6,4 @@ python-dotenv
 pydantic
 pydantic-settings
 jsonschema
+appium-python-client
